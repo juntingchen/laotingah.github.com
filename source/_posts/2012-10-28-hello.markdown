@@ -1,0 +1,8 @@
+---
+layout: post
+title: "Hello"
+date: 2012-10-28 10:37
+comments: true
+categories: 
+---
+Hello, this is my first post.
