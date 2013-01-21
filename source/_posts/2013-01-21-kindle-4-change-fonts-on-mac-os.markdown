@@ -7,8 +7,8 @@ categories:
 ---
 
 ## 更换Kindle字体指南（基于Kindle 4和Mac OS）
-这是一篇更换Kindle字体的快速指南，且不要求读者有任何技术背景。本文基于[@miaoo](http://miaoo.in)的《[Kindle 4更换中文字体](http://miaoo.in/kindle4-modify-font.html)》，但针对Mac OS用户提供了简捷的ssh方法（下文介绍）。
-更换字体的原因是Kindle1-4上默认的中文字体Het显示较为粗糙，读者会希望更换更舒服的字体，比如宋体。
+这是一篇更换Kindle字体的快速指南，不要求读者有任何技术背景。对于没有任何经验的用户，完成以下步骤大概需要20分钟。
+本文基于[@miaoo](http://miaoo.in)的《[Kindle 4更换中文字体](http://miaoo.in/kindle4-modify-font.html)》，但针对Mac OS用户提供了更为简捷的ssh方法（下文介绍）。更换字体的原因是Kindle1-4上默认的中文字体Het显示较为粗糙，读者会希望更换更舒服的字体（比如宋体）。
 ###1、准备想要更换的字体
 准备两种字体文件，普通字体用于显示正文以及粗体用于显示标题，分别命名为CJK.ttf和CJK_Bold.ttf。
 一般认为比较舒服的是方正雅宋和方正特雅宋，可以在[这里](http://ishare.iask.sina.com.cn/f/22080046.html)下载。
@@ -25,7 +25,7 @@ categories:
 
 {% img /images/2013-01-21-kindle-4-change-fonts/networking1.jpg %}
 ###7、ssh登录Kindle
-打开终端(Terminal)，这东西一般在应用程序(Applications)->实用工具(Utilities)里。输入以下命令：
+打开终端(Terminal)。这东西一般在应用程序(Applications)->实用工具(Utilities)里。输入以下命令：
 
 {% codeblock %}
 ssh root@192.168.15.244
@@ -51,14 +51,16 @@ cd /mnt/base-mmc/usr/java/lib/
 cp font.properties font.properties.bak
 vi font.properties
 {% endcodeblock %}
-上面第一条命令是进入系统库目录。第二条命令是备份原有的字体设置文件。第三条命令是打开vi编辑器修改字体设置文件。在vi中找到如下行，
+上面第一条命令是进入系统库目录。第二条命令是备份原有的字体设置文件。第三条命令是打开vi编辑器修改字体设置文件。
+
+在vi中找到如下行，
 {% codeblock %}
 hans.0=MHeiM18030_E.ttf
 hans.plain=MHeiM18030_E.ttf
 hans.1=MHeiM18030_E_Bold.ttf
 hans.bold=MHeiM18030_E_Bold.ttf
 {% endcodeblock %}
-将其修改为（按 i 键进入编辑模式）：
+按 i 键进入编辑模式，将其修改为
 {% codeblock %}
 hans.0=CJK.ttf
 hans.plain=CJK.ttf
@@ -71,18 +73,18 @@ hans.bold=CJK_Bold.ttf
 mntroot ro
 {% endcodeblock %}
 ###10、退出调试模式
-在Kindle上返回主菜单，可一直按方向键右键(FW Right)。然后依次进入Exit, Reboot or Disable Diags -> Disable Diagnostics。屏幕询问"Are you sure"时，按方向键左键(FW Left)退出。
+关闭终端(Terminal）。在Kindle上返回主菜单，可一直按方向键右键(FW Right)。然后依次进入Exit, Reboot or Disable Diags -> Disable Diagnostics。屏幕询问"Are you sure"时，按方向键左键(FW Left)退出。
 设备将重启并回到正常模式。
 字体修改设置完成！
 ###FAQ
 - 为何有些书籍中文显示仍粗糙？
 
-Ans：通常的原因是书籍未标明语言。解决方法是用[Calibre](http://calibre-ebook.com/download_osx)修改书籍的元数据，并标明为中文。
+Ans：通常的原因是书籍未标明语言。解决方法是用[Calibre](http://calibre-ebook.com/download_osx)修改书籍的元数据，将其标明为中文。
 
 {% img /images/2013-01-21-kindle-4-change-fonts/Calibre1.jpg %}
 
-另一种方法是直接指定显示语言。方法如下。
-按Home键回到主界面，然后按键盘键调出键盘。输入
+另一种方法是直接指定显示语言，如下。
+在Kindle上按Home键回到主界面，然后按键盘键调出键盘。输入
 {% codeblock %}
 ;debugOn
 ~changeLocale zh-CN.utf8
