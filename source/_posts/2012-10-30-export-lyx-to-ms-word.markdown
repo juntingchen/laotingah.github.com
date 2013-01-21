@@ -31,7 +31,7 @@ There is a comprehensive overview for the exporting LaTeX to other text-processo
 
 	I tried [latex2rtf]. It simply stopped at some “unknown control sequence”. I think the results of this solution are just similar as using a Word importer.
 	
-4. **LyX -> HTML -> Word (RECOMMENDED)**
+4. **LyX -> HTML -> Word (*RECOMMENDED*)**
 	- Pros: suitable for documents with many complex math equations
 	- Cons: need a lot post-fine-tuning
 	
@@ -48,24 +48,27 @@ There is a comprehensive overview for the exporting LaTeX to other text-processo
 	Note: [1] There are a few other options in exporting, e.g., LyxHTML and HTML (MS Word). However, these options simply did not work for me.
 [2] The exported cannot support image file type other than EPS (may depend on your LyX and LaTeX package versions). I used [JPG-PNGTOEPS] to batch-convert all my images.
 
-## Find tuning in Word
+4. Find tuning in Word
 
-1.	**Insert all the footnotes**
+	+ *Insert all the footnotes*
 
 	Footnotes are exported in separated html files in sequence. You need to copy them back into your main Word file.
 
-2.	**Fine tune the images and tables**
+	+ *Fine tune the images and tables*
 
 	Resize the image / substitute the low resolution exported EPS-jpeg images into clearer ones. Give them captions if you may need.
 
-3.	**Fine tune the equations**
+	+ *Fine tune the equations*
 
 	The inline layout for equation images may be ugly and need adjusting.
 
-4.	**Break the linked image in Word file (IMPORTANT)**
+	+ *Break the linked image in Word file (IMPORTANT)*
 
 	By default, the images are not stored in the doc file but linked to the exported subfolder. The way to break them is, 
-	- In Word 2010, first convert the file into .docx format. Then go to File->Info, at the rightmost, click into “Edit link to Files”. Inside, select all the graphic files, check the box “Save picture in document” and click “Break Link”. Then you are done.
+	- In Word 2010, first convert the file into .docx format. 
+	- Then go to File->Info, at the rightmost, click into “Edit link to Files”. 
+	- Inside, select all the graphic files, check the box “Save picture in document” and click “Break Link”. 
+	- Then you are done.
 
 ## Open issues
 Although the LyX -> HTML -> Word method seems to best fit into my situation, it still requires a lot of efforts for fine tuning. What’s more, I spotted some issues and hope someone can help me improve. 
