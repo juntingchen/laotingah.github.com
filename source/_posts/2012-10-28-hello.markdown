@@ -6,3 +6,15 @@ comments: true
 categories: 
 ---
 Hello, this is my first post.
+
+[Octopress](http://octopress.org) is a wonderful tool for blogging.
+
+{% codeblock %}
+rake new_post["title"]
+rake generate
+rake preview
+rake deploy
+git add .
+git commit -m 'my new post'
+git push origin source
+{% endcodeblock %}
