@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>LyX section label issue - laoting</title>
+  <meta name="author" content="laoting">
+
+  
+  <meta name="description" content="It had been a headache to me for over 2 days dealing with the section label problem in LyX. It ended up with a bug report sent to both LyX developer &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://laotingah.github.com/blog/2012/11/07/lyx-section-label-issue/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="laoting" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">laoting</a></h1>
+  
+    <h2>Freedom is a capacibility to solve problems</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:laotingah.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">LyX Section Label Issue</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-07T22:32:00+08:00" pubdate data-updated="true">Nov 7<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>It had been a headache to me for over 2 days dealing with the section label problem in LyX. It ended up with a bug report sent to both LyX developer forum and the author of spconf.sty, an IEEE paper formatting package for LaTeX. The turn out is the LyX developers have found an alternative solution years ago and they insist to &#8221;<em>educating the user by making it impossible to put a label in a section</em>&#8221;. Therefore, I find it necessary to broadcast this to the potential LyX rookies.</p>
+
+<p>The story is the following. If you put a label in the environment of a section just following the section name (sounds quite logical, isn&#8217;t it?), LyX generates the LaTeX source as follows,</p>
+
+<p>LyX source:</p>
+
+<p><img src="/images/2012-11-07-lyx-section-label-issue/section_label_1.png"></p>
+
+<p>LaTeX source output:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>\subsection{Two Timescale User Scheduling \label{sub:Two-Timescale-scheduling}}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Note that the \label{} is placed within the section macro. This is fine in general, but it may generate problems for some package, e.g. the spconf.sty package. Using spconf.sty, you may encounter this warning</p>
+
+<p><em>LaTeX Warning: Reference &#8216;sub:Two-Timescale-scheduling&#8217; underfined</em></p>
+
+<p>It is said that it generate spurious latex errors when using &#8220;non-latin 1 codepages&#8221; [1].</p>
+
+<p>The LyX forum suggest to label the section in this way,</p>
+
+<p>LyX Source:</p>
+
+<p><img src="/images/2012-11-07-lyx-section-label-issue/section_label_2.png"></p>
+
+<p>Then the LaTeX source will be:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>\subsection{Two Timescale User Scheduling}
+</span><span class='line'>
+</span><span class='line'>\label{sub:Two-Timescale-scheduling}
+</span><span class='line'>
+</span><span class='line'>Conventional throughput optimal (in stability ...</span></code></pre></td></tr></table></div></figure>
+
+
+<p>which follows the LaTeX code convention.</p>
+
+<p>So the conclusion is, so avoid various mysterious trouble, just change your LyX code habit!</p>
+
+<p>See also:
+[1] The LyX project ticket track <a href="http://www.lyx.org/trac/ticket/2154">#2154</a>.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">laoting</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-07T22:32:00+08:00" pubdate data-updated="true">Nov 7<span>th</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://laotingah.github.com/blog/2012/11/07/lyx-section-label-issue/" data-via="" data-counturl="http://laotingah.github.com/blog/2012/11/07/lyx-section-label-issue/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/10/30/export-lyx-to-ms-word/" title="Previous Post: Export LyX to MS Word">&laquo; Export LyX to MS Word</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/01/21/kindle-4-change-fonts-on-mac-os/" title="Next Post: Kindle 4: Change fonts on Mac OS">Kindle 4: Change fonts on Mac OS &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/21/kindle-4-change-fonts-on-mac-os/">Kindle 4: Change fonts on Mac OS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/07/lyx-section-label-issue/">LyX section label issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/30/export-lyx-to-ms-word/">Export LyX to MS Word</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/28/hello/">Hello</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - laoting -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

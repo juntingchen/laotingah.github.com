@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Kindle 4: Change fonts on Mac OS - laoting</title>
+  <meta name="author" content="laoting">
+
+  
+  <meta name="description" content="更换Kindle字体指南（基于Kindle 4和Mac OS） 这是一篇更换Kindle字体的快速指南，不要求读者有任何技术背景。对于没有任何经验的用户，完成以下步骤大概需要20分钟。
+本文基于@miaoo的《Kindle 4更换中文字体》，但针对Mac OS用户提供了更为简捷的ssh方法（ &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://laotingah.github.com/blog/2013/01/21/kindle-4-change-fonts-on-mac-os/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="laoting" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">laoting</a></h1>
+  
+    <h2>Freedom is a capacibility to solve problems</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:laotingah.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Kindle 4: Change Fonts on Mac OS</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-21T19:35:00+08:00" pubdate data-updated="true">Jan 21<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h2>更换Kindle字体指南（基于Kindle 4和Mac OS）</h2>
+
+<p>这是一篇更换Kindle字体的快速指南，不要求读者有任何技术背景。对于没有任何经验的用户，完成以下步骤大概需要20分钟。
+本文基于<a href="http://miaoo.in">@miaoo</a>的《<a href="http://miaoo.in/kindle4-modify-font.html">Kindle 4更换中文字体</a>》，但针对Mac OS用户提供了更为简捷的ssh方法（下文介绍）。更换字体的原因是Kindle1-4上默认的中文字体Het显示较为粗糙，读者会希望更换更舒服的字体（比如宋体）。</p>
+
+<h3>1、准备想要更换的字体</h3>
+
+<p>准备两种字体文件，普通字体用于显示正文以及粗体用于显示标题，分别命名为CJK.ttf和CJK_Bold.ttf。
+一般认为比较舒服的是方正雅宋和方正特雅宋，可以在<a href="http://ishare.iask.sina.com.cn/f/22080046.html">这里</a>下载。</p>
+
+<h3>2、获取Kindle序列号和root密码</h3>
+
+<p>序列号可在Menu->Settings->Device Info找到（Serial Number）。root密码可以通过<a href="http://miaoo.in/kindle4-modify-font.html">这个帖子</a>破解。但如果Kindle版本为4.0，则root密码为&#8221;mario&#8221;（不含引号）。</p>
+
+<h3>3、将字体文件传输到Kindle</h3>
+
+<p>连接Kindle到电脑，将两个字体文件CJK.ttf和CJK_Bold.ttf拷贝到 documents/目录下。</p>
+
+<h3>4、进入调试模式</h3>
+
+<p>在Kindle根目录下创建一个名为“ENABLE_DIAGS”的空文件夹。重启设备，Menu->Settings->menu->restart.(注：Menu是指菜单按钮。)</p>
+
+<h3>5、开启USBnet模式</h3>
+
+<p>设备进入调试模式后，根据导航菜单依次进入Misc individual diagnostics -> Utilities -> Enable USBnet。看到&#8221;PASS“以后，按右方向键(FW Right)确认，屏幕将返回上层菜单。</p>
+
+<h3>6、在Mac OS中为Kindle配置IP地址</h3>
+
+<p>在Mac OS中打开系统偏好（System preferences），打开”网络(Network)&#8221;，在左栏将看到一个叫”RNDIS/Ethernet Gadget&#8221;的设备。将IP地址配置方式设为“手动（Manually）”，设置IP地址（IP Address）为192.168.15.1，子网掩码（Subnet Mask）为255.255.255.0.</p>
+
+<p><img src="/images/2013-01-21-kindle-4-change-fonts/networking1.jpg"></p>
+
+<h3>7、ssh登录Kindle</h3>
+
+<p>打开终端(Terminal)。这东西一般在应用程序(Applications)->实用工具(Utilities)里。输入以下命令：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ssh root@192.168.15.244</span></code></pre></td></tr></table></div></figure>
+
+
+<p>终端将会提示输入密码，即是第2步获取的root密码。注意，输入密码过程屏幕不会有任何显示，输入完毕后直接按回车即可。
+连接成功后，终端提示符将变为</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>root></span></code></pre></td></tr></table></div></figure>
+
+
+<h3>8、拷贝字体文件到系统目录</h3>
+
+<p>依次输入以下命令</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mntroot rw
+</span><span class='line'>mount /dev/mmcblk0p1 /mnt/base-mmc
+</span><span class='line'>cp /mnt/base-us/documents/CJK.ttf /mnt/base-mmc/usr/java/lib/fonts/
+</span><span class='line'>cp /mnt/base-us/documents/CJK_Bold.ttf /mnt/base-mmc/usr/java/lib/fonts/</span></code></pre></td></tr></table></div></figure>
+
+
+<p>第一条命令是将系统目录权限改为可读写。第二条命令是挂在系统目录。最后两条命令是将两个字体文件从用户目录复制到系统的字体目录。读者可以看到，在系统字体目录usr/java/lib/fonts/下还有其他字体文件。</p>
+
+<h3>9、修改系统字体设置</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd /mnt/base-mmc/usr/java/lib/
+</span><span class='line'>cp font.properties font.properties.bak
+</span><span class='line'>vi font.properties</span></code></pre></td></tr></table></div></figure>
+
+
+<p>上面第一条命令是进入系统库目录。第二条命令是备份原有的字体设置文件。第三条命令是打开vi编辑器修改字体设置文件。</p>
+
+<p>在vi中找到如下行，</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>hans.0=MHeiM18030_E.ttf
+</span><span class='line'>hans.plain=MHeiM18030_E.ttf
+</span><span class='line'>hans.1=MHeiM18030_E_Bold.ttf
+</span><span class='line'>hans.bold=MHeiM18030_E_Bold.ttf</span></code></pre></td></tr></table></div></figure>
+
+
+<p>按 i 键进入编辑模式，将其修改为</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>hans.0=CJK.ttf
+</span><span class='line'>hans.plain=CJK.ttf
+</span><span class='line'>hans.1=CJK_Bold.ttf
+</span><span class='line'>hans.bold=CJK_Bold.ttf</span></code></pre></td></tr></table></div></figure>
+
+
+<p>保存退出(按ESC，输入 :wq)。注意，要输入冒号&#8221;:&#8221;。
+最后重新设定系统目录的只读权限：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>mntroot ro</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>10、退出调试模式</h3>
+
+<p>关闭终端(Terminal）。在Kindle上返回主菜单，可一直按方向键右键(FW Right)。然后依次进入Exit, Reboot or Disable Diags -> Disable Diagnostics。屏幕询问&#8221;Are you sure&#8221;时，按方向键左键(FW Left)退出。
+设备将重启并回到正常模式。
+字体修改设置完成！</p>
+
+<h3>FAQ</h3>
+
+<ul>
+<li>为何有些书籍中文显示仍粗糙？</li>
+</ul>
+
+
+<p>Ans：通常的原因是书籍未标明语言。解决方法是用<a href="http://calibre-ebook.com/download_osx">Calibre</a>修改书籍的元数据，将其标明为中文。</p>
+
+<p><img src="/images/2013-01-21-kindle-4-change-fonts/Calibre1.jpg"></p>
+
+<p>另一种方法是直接指定显示语言，如下。
+在Kindle上按Home键回到主界面，然后按键盘键调出键盘。输入</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>;debugOn
+</span><span class='line'>~changeLocale zh-CN.utf8
+</span><span class='line'>;debugOff</span></code></pre></td></tr></table></div></figure>
+
+
+<p>注意要输入分号“;”和波浪号“~&#8221;，注意大小写，以及每一行输入完毕后输入”回车符”。每行输入完后，屏幕不会有特别显示的。</p>
+
+<h3>其他相关资源</h3>
+
+<ul>
+<li>中文字典：<a href="http://tumutanzi.com/archives/5465">这里</a>有比较多的Kindle中文电子词典。但比较鸡肋的是，大部分词典不支持单复数，比如类似virtues这样的单词就不认识了。感觉还是没有系统自带的词典好。</li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">laoting</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-21T19:35:00+08:00" pubdate data-updated="true">Jan 21<span>st</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://laotingah.github.com/blog/2013/01/21/kindle-4-change-fonts-on-mac-os/" data-via="" data-counturl="http://laotingah.github.com/blog/2013/01/21/kindle-4-change-fonts-on-mac-os/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/11/07/lyx-section-label-issue/" title="Previous Post: LyX section label issue">&laquo; LyX section label issue</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/21/kindle-4-change-fonts-on-mac-os/">Kindle 4: Change fonts on Mac OS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/07/lyx-section-label-issue/">LyX section label issue</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/30/export-lyx-to-ms-word/">Export LyX to MS Word</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/28/hello/">Hello</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - laoting -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

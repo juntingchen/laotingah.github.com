@@ -1,100 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>laoting</title>
-  <meta name="author" content="laoting">
-
-  
-  <meta name="description" content="更换Kindle字体指南（基于Kindle 4和Mac OS） 这是一篇更换Kindle字体的快速指南，不要求读者有任何技术背景。对于没有任何经验的用户，完成以下步骤大概需要20分钟。
-本文基于@miaoo的《Kindle 4更换中文字体》，但针对Mac OS用户提供了更为简捷的ssh方法（ &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://laotingah.github.com/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="laoting" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-  
-
-</head>
-
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">laoting</a></h1>
-  
-    <h2>Freedom is a capacibility to solve problems</h2>
-  
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:laotingah.github.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
+  <title><![CDATA[laoting]]></title>
+  <link href="http://laotingah.github.com/atom.xml" rel="self"/>
+  <link href="http://laotingah.github.com/"/>
+  <updated>2013-01-22T12:57:57+08:00</updated>
+  <id>http://laotingah.github.com/</id>
+  <author>
+    <name><![CDATA[laoting]]></name>
     
-      <h1 class="entry-title"><a href="/blog/2013/01/21/kindle-4-change-fonts-on-mac-os/">Kindle 4: Change Fonts on Mac OS</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
   
-
-
-<time datetime="2013-01-21T19:35:00+08:00" pubdate data-updated="true">Jan 21<span>st</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>更换Kindle字体指南（基于Kindle 4和Mac OS）</h2>
+  <entry>
+    <title type="html"><![CDATA[Kindle 4: Change fonts on Mac OS]]></title>
+    <link href="http://laotingah.github.com/blog/2013/01/21/kindle-4-change-fonts-on-mac-os/"/>
+    <updated>2013-01-21T19:35:00+08:00</updated>
+    <id>http://laotingah.github.com/blog/2013/01/21/kindle-4-change-fonts-on-mac-os</id>
+    <content type="html"><![CDATA[<h2>更换Kindle字体指南（基于Kindle 4和Mac OS）</h2>
 
 <p>这是一篇更换Kindle字体的快速指南，不要求读者有任何技术背景。对于没有任何经验的用户，完成以下步骤大概需要20分钟。
 本文基于<a href="http://miaoo.in">@miaoo</a>的《<a href="http://miaoo.in/kindle4-modify-font.html">Kindle 4更换中文字体</a>》，但针对Mac OS用户提供了更为简捷的ssh方法（下文介绍）。更换字体的原因是Kindle1-4上默认的中文字体Het显示较为粗糙，读者会希望更换更舒服的字体（比如宋体）。</p>
@@ -124,7 +48,7 @@
 
 <p>在Mac OS中打开系统偏好（System preferences），打开”网络(Network)&#8221;，在左栏将看到一个叫”RNDIS/Ethernet Gadget&#8221;的设备。将IP地址配置方式设为“手动（Manually）”，设置IP地址（IP Address）为192.168.15.1，子网掩码（Subnet Mask）为255.255.255.0.</p>
 
-<p><img src="/images/2013-01-21-kindle-4-change-fonts/networking1.jpg"></p>
+<p><img src="http://laotingah.github.com/images/2013-01-21-kindle-4-change-fonts/networking1.jpg"></p>
 
 <h3>7、ssh登录Kindle</h3>
 
@@ -215,7 +139,7 @@
 
 <p>Ans：通常的原因是书籍未标明语言。解决方法是用<a href="http://calibre-ebook.com/download_osx">Calibre</a>修改书籍的元数据，将其标明为中文。</p>
 
-<p><img src="/images/2013-01-21-kindle-4-change-fonts/Calibre1.jpg"></p>
+<p><img src="http://laotingah.github.com/images/2013-01-21-kindle-4-change-fonts/Calibre1.jpg"></p>
 
 <p>另一种方法是直接指定显示语言，如下。
 在Kindle上按Home键回到主界面，然后按键盘键调出键盘。输入</p>
@@ -236,48 +160,21 @@
 <li>中文字典：<a href="http://tumutanzi.com/archives/5465">这里</a>有比较多的Kindle中文电子词典。但比较鸡肋的是，大部分词典不支持单复数，比如类似virtues这样的单词就不认识了。感觉还是没有系统自带的词典好。</li>
 </ul>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/07/lyx-section-label-issue/">LyX Section Label Issue</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-07T22:32:00+08:00" pubdate data-updated="true">Nov 7<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>It had been a headache to me for over 2 days dealing with the section label problem in LyX. It ended up with a bug report sent to both LyX developer forum and the author of spconf.sty, an IEEE paper formatting package for LaTeX. The turn out is the LyX developers have found an alternative solution years ago and they insist to &#8221;<em>educating the user by making it impossible to put a label in a section</em>&#8221;. Therefore, I find it necessary to broadcast this to the potential LyX rookies.</p>
+  <entry>
+    <title type="html"><![CDATA[LyX section label issue]]></title>
+    <link href="http://laotingah.github.com/blog/2012/11/07/lyx-section-label-issue/"/>
+    <updated>2012-11-07T22:32:00+08:00</updated>
+    <id>http://laotingah.github.com/blog/2012/11/07/lyx-section-label-issue</id>
+    <content type="html"><![CDATA[<p>It had been a headache to me for over 2 days dealing with the section label problem in LyX. It ended up with a bug report sent to both LyX developer forum and the author of spconf.sty, an IEEE paper formatting package for LaTeX. The turn out is the LyX developers have found an alternative solution years ago and they insist to &#8221;<em>educating the user by making it impossible to put a label in a section</em>&#8221;. Therefore, I find it necessary to broadcast this to the potential LyX rookies.</p>
 
 <p>The story is the following. If you put a label in the environment of a section just following the section name (sounds quite logical, isn&#8217;t it?), LyX generates the LaTeX source as follows,</p>
 
 <p>LyX source:</p>
 
-<p><img src="/images/2012-11-07-lyx-section-label-issue/section_label_1.png"></p>
+<p><img src="http://laotingah.github.com/images/2012-11-07-lyx-section-label-issue/section_label_1.png"></p>
 
 <p>LaTeX source output:</p>
 
@@ -295,7 +192,7 @@
 
 <p>LyX Source:</p>
 
-<p><img src="/images/2012-11-07-lyx-section-label-issue/section_label_2.png"></p>
+<p><img src="http://laotingah.github.com/images/2012-11-07-lyx-section-label-issue/section_label_2.png"></p>
 
 <p>Then the LaTeX source will be:</p>
 
@@ -317,42 +214,15 @@
 
 <p>See also:
 [1] The LyX project ticket track <a href="http://www.lyx.org/trac/ticket/2154">#2154</a>.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/30/export-lyx-to-ms-word/">Export LyX to MS Word</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-30T20:55:00+08:00" pubdate data-updated="true">Oct 30<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Normally, we seldom put a LyX document into Word, since the reason we use LyX is for better handling the math equations and the layout, which MS Word is truly bad at. However, you might probably run into a situation one day that your boss requests only a Word document. Then you need the exporting. As you may know, the equations would be your nightmare.</p>
+  <entry>
+    <title type="html"><![CDATA[Export LyX to MS Word]]></title>
+    <link href="http://laotingah.github.com/blog/2012/10/30/export-lyx-to-ms-word/"/>
+    <updated>2012-10-30T20:55:00+08:00</updated>
+    <id>http://laotingah.github.com/blog/2012/10/30/export-lyx-to-ms-word</id>
+    <content type="html"><![CDATA[<p>Normally, we seldom put a LyX document into Word, since the reason we use LyX is for better handling the math equations and the layout, which MS Word is truly bad at. However, you might probably run into a situation one day that your boss requests only a Word document. Then you need the exporting. As you may know, the equations would be your nightmare.</p>
 
 <p>I have just exported a long LyX document into two 70-page MS Word documents. One is a survey report, mixed with text, pictures and equations, and, another is a technical report, pages of mathematics equations. I actually spent 10+ hours for the whole process, including a couple of hours searching for a one-off exporting method (of course, it does not exist!) and a painful night for fine-tuning the exported Word document.</p>
 
@@ -458,42 +328,15 @@
 <p>For example, $U_M<sup>2$</sup> would becomes $U_M\,<sup>^2$.</sup> Things get worse with superscript’s superscript, etc. I think the reason is LyX thinks HTML can display such superscripts/subscripts and so that refuse to convert it into images. Would there be a way to force LyX to convert every equation into an image?</p></li>
 </ol>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/28/hello/">Hello</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-28T10:37:00+08:00" pubdate data-updated="true">Oct 28<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Hello, this is my first post.</p>
+  <entry>
+    <title type="html"><![CDATA[Hello]]></title>
+    <link href="http://laotingah.github.com/blog/2012/10/28/hello/"/>
+    <updated>2012-10-28T10:37:00+08:00</updated>
+    <id>http://laotingah.github.com/blog/2012/10/28/hello</id>
+    <content type="html"><![CDATA[<p>Hello, this is my first post.</p>
 
 <p><a href="http://octopress.org">Octopress</a> is a wonderful tool for blogging.</p>
 
@@ -512,81 +355,7 @@
 </span><span class='line'>git commit -m 'my new post'
 </span><span class='line'>git push origin source</span></code></pre></td></tr></table></div></figure>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2013/01/21/kindle-4-change-fonts-on-mac-os/">Kindle 4: Change fonts on Mac OS</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/11/07/lyx-section-label-issue/">LyX section label issue</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/10/30/export-lyx-to-ms-word/">Export LyX to MS Word</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/10/28/hello/">Hello</a>
-      </li>
-    
-  </ul>
-</section>
-
-
-
-
-
-
-  
-</aside>
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - laoting -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
-
-
-
-
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-
-</body>
-</html>
+</feed>
